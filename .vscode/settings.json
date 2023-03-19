@@ -1,0 +1,15 @@
+{
+  "cSpell.words": [
+    "firestore",
+    "flowbite",
+    "GDSC",
+    "Hongik",
+    "popperjs",
+    "tailwindcss",
+    "Turborepo",
+    "zerodevx"
+  ],
+
+  // ignore tailwind warnings
+  "css.lint.unknownAtRules": "ignore"
+}

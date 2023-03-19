@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+
+		%sveltekit.head%
+	</head>
+
+	<body class="flex h-screen items-center justify-center dark:bg-gray-900">
+		<!--
+			sveltekit.body should not be directly inside body
+			https://kit.svelte.dev/docs/project-structure#project-files
+		-->
+		<div id="app">%sveltekit.body%</div>
+	</body>
+</html>
