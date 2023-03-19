@@ -93,8 +93,14 @@ GDSC 홍익 오픈 커뮤니티 회원가입을 위해 Digital Ocean App Platfor
 
     - 환경 변수 설정
 
+    - 빌드 커맨드
+
+      ```
+      cd apps/website && npm run build
+      ```
+
     - 실행 명령어
 
       ```
-      # PORT=80 node build/index.js
+      apps/website && PORT=80 node build/index.js
       ```
