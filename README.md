@@ -1,4 +1,4 @@
-# GDSC Hongik Open Community
+# GDSC Open Community
 
 [turborepo](https://turbo.build/repo)를 이용해 관리되는 monorepo입니다.
 
