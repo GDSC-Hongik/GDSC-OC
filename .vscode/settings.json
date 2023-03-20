@@ -1,15 +1,33 @@
 {
   "cSpell.words": [
+    "cooldown",
+    "cooldowns",
+    "devrating",
+    "DOCKERHUB",
+    "firestore",
     "firestore",
     "flowbite",
     "GDSC",
+    "GDSC",
+    "gdschongikoc",
+    "Hongik",
     "Hongik",
     "popperjs",
     "tailwindcss",
     "Turborepo",
+    "UNRANKED",
+    "upvote",
+    "upvoted",
+    "upvoters",
+    "upvotes",
     "zerodevx"
   ],
 
   // ignore tailwind warnings
-  "css.lint.unknownAtRules": "ignore"
+  "css.lint.unknownAtRules": "ignore",
+
+  "editor.codeActionsOnSave": {
+    // for import sorting and stuff
+    "source.fixAll.eslint": true
+  }
 }

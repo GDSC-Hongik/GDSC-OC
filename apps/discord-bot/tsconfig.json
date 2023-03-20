@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"rootDir": "./src",
+		"outDir": "./build",
+
+		"target": "ES2022",
+		"module": "Node16",
+
+		"strict": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"include": ["./src/**/*", "./src/lib/serviceAccountKey.json"]
+}
