@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - apps/discord-bot
+      - .github/workflows/deploy.yml
     branches:
       - master
   workflow_dispatch:
