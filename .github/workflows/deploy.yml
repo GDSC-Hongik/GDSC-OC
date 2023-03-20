@@ -16,6 +16,6 @@ jobs:
           image: gdschongikoc/discord-bot
           registry: docker.io
           directory: apps/discord-bot
-          dockerfile: Dockerfile.prod
+          dockerfile: apps/discord-bot/Dockerfile.prod
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
