@@ -16,11 +16,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: cd into apps/discord-bot
-        run: cd apps/discord-bot
-
       - name: Build and push
         uses: docker/build-push-action@v3
+        working-directory: apps/discord-bot
         with:
           file: Dockerfile.prod
           push: true
