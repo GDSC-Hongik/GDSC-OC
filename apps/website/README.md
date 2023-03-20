@@ -104,3 +104,35 @@ GDSC 홍익 오픈 커뮤니티 회원가입을 위해 Digital Ocean App Platfor
       ```
       apps/website && PORT=80 node build/index.js
       ```
+
+    - [App spec](https://docs.digitalocean.com/glossary/app-spec)
+
+      - environment variable 정보를 채운 후 사용하세요
+
+      ```yaml
+      alerts:
+      - rule: DEPLOYMENT_FAILED
+      - rule: DOMAIN_FAILED
+      domains:
+      - domain: oc.gdschongik.com
+         type: PRIMARY
+      ingress: {}
+      name: website
+      region: sgp
+      services:
+      - build_command: cd apps/website && npm run build
+         environment_slug: node-js
+         envs: <비밀>
+         github:
+            branch: master
+            deploy_on_push: true
+            repo: GDSC-Hongik/GDSC-OC
+         http_port: 80
+         instance_count: 1
+         instance_size_slug: basic-xxs
+         name: website
+         routes:
+            - path: /
+         run_command: cd apps/website && PORT=80 node build/index.js
+         source_dir: /apps/website
+      ```
