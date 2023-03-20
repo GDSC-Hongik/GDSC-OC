@@ -18,8 +18,8 @@ jobs:
 
       - name: Build and push
         uses: docker/build-push-action@v3
-        working-directory: apps/discord-bot
         with:
+          context: ./apps/discord-bot
           file: Dockerfile.prod
           push: true
           tags: gdschongikoc/discord-bot:latest
