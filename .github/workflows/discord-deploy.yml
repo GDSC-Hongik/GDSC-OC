@@ -20,8 +20,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker Image
-        working-directory: ./apps/discord-bot
-        run: docker build -f Dockerfile.prod -t gdschongikoc/discord-bot:latest .
+        working-directory: apps/discord-bot
+        run: docker build -f Dockerfile.prod -t ${{ secrets.DOCKERHUB_USERNAME }}/discord-bot:latest .
 
       - name: Push Docker Image
-        run: docker push gdschongikoc/discord-bot:latest
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/discord-bot:latest
