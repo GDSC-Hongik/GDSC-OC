@@ -43,6 +43,23 @@
    yarn dev
    ```
 
+## 도커 명령어
+
+- 개발시 테스트용으로만 사용하세요
+- 배포는 [GDSC-Hongik/GDSC-OC-discord-bot-deploy](https://github.com/GDSC-Hongik/GDSC-OC-discord-bot-deploy)를 참고하세요
+
+- 도커 이미지 빌드
+
+```
+docker build -f apps/discord-bot/Dockerfile.prod . -t gdsc-oc-discord-bot
+```
+
+- 도커 이미지 실행
+
+```
+docker run -v $(pwd)/apps/discord-bot/src/lib/serviceAccountKey.json:/app/apps/discord-bot/build/lib/serviceAccountKey.json -v $(pwd)/apps/discord-bot/.env:/app/apps/discord-bot/.env gdsc-oc-discord-bot
+```
+
 ## 학습 자료
 
 - [디스코드 개발자 문서](https://discord.com/developers/docs)
