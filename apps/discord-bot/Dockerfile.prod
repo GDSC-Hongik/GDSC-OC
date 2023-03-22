@@ -1,28 +1,29 @@
-# Prepare dependencies
+# Prepare Dependencies
 FROM node:hydrogen-alpine AS deps
+WORKDIR /app
 # https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine
 RUN apk add --no-cache libc6-compat
-WORKDIR /app
-COPY package.json package-lock.json ./
-# this will make "npm install" omit devDependencies
+COPY apps/discord-bot/package.json yarn.lock ./
+# make "yarn install" omit devDependencies
 ENV NODE_ENV production
-RUN npm install
-
+RUN yarn install
 
 # Build Discord Bot
 FROM node:hydrogen-alpine AS builder
 WORKDIR /app
 COPY . .
-RUN touch src/lib/serviceAccountKey.json
-RUN npm install
-RUN npm run build
-
+RUN touch apps/discord-bot/src/lib/serviceAccountKey.json
+RUN yarn install
+WORKDIR /app/apps/discord-bot
+RUN yarn build
 
 # Run Discord Bot
 FROM node:hydrogen-alpine AS runner
-USER node
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY --from=builder /app/build/ .
-VOLUME /lib/serviceAccountKey.json
+USER node
+COPY --from=deps      /app/node_modules                      ./node_modules
+COPY --from=builder   /app/apps/discord-bot/build            apps/discord-bot/build
+COPY --from=builder   /app/apps/discord-bot/package.json     apps/discord-bot/package.json
+VOLUME /app/apps/discord-bot/src/lib/serviceAccountKey.json
+WORKDIR /app/apps/discord-bot
 CMD ["node", "."]
