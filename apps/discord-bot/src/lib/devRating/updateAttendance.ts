@@ -40,7 +40,7 @@ async function updateUserData(uid: string, user: GDSCUser, YYYYMMDD: string) {
 	// update achievements
 	const achievementSet = new Set(user.achievements)
 	const totalDaysAttended = user.attendance.length
-	if (totalDaysAttended >= 1) achievementSet.add(Achievements.ATTENDANCE_1)
+	// 1 day achievement is not used
 	if (totalDaysAttended >= 10) achievementSet.add(Achievements.ATTENDANCE_10)
 	if (totalDaysAttended >= 30) achievementSet.add(Achievements.ATTENDANCE_30)
 	if (totalDaysAttended >= 50) achievementSet.add(Achievements.ATTENDANCE_50)
