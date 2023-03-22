@@ -1,0 +1,13 @@
+name: Linters
+
+on: [push]
+
+jobs:
+  validate-commits:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Make sure commit messages are compliant with conventional commit
+        uses: aevea/commitsar@v0.20.1
