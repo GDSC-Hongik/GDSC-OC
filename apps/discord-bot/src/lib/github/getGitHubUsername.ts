@@ -24,6 +24,12 @@ export default async function (
 		headers: { Authorization: process.env.GITHUB_PAT },
 	})
 
+	if (response.headers.get("x-ratelimit-remaining") === "0")
+		return {
+			success: false,
+			reason: "Reached GitHub API limit. Try again later.",
+		}
+
 	const data = (await response.json()) as { login: string }
 
 	return {
