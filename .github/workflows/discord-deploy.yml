@@ -3,7 +3,7 @@ name: Deploy Discord Bot Image to Docker Hub
 on:
   push:
     paths:
-      - apps/discord-bot
+      - apps/discord-bot/**
       - .github/workflows/discord-deploy.yml
     branches:
       - master
