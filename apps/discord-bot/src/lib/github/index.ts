@@ -2,7 +2,7 @@ import fileExists from "./fileExists"
 import getGitHubUID from "./getGitHubUID"
 import getGitHubUsername from "./getGitHubUsername"
 
-interface GithubCache {
+export interface GithubCache {
 	// maps firebase UID -> github UID
 	ids: { [firebaseUID: string]: string }
 
