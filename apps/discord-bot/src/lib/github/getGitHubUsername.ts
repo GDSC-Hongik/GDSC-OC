@@ -7,15 +7,18 @@ import { getGitHubUID, githubCache } from "."
  */
 export default async function (
 	firebaseUID: string
-): Promise<string | undefined> {
+): Promise<
+	{ success: true; data: string } | { success: false; reason: string }
+> {
 	if (githubCache.usernames[firebaseUID])
-		return githubCache.usernames[firebaseUID]
+		return { success: true, data: githubCache.usernames[firebaseUID] }
 
 	const githubUID = await getGitHubUID(firebaseUID)
-	if (!githubUID) {
-		console.error("Failed to ")
-		return undefined
-	}
+	if (!githubUID)
+		return {
+			success: false,
+			reason: "Failed to convert firebase auth user ID to github UID",
+		}
 
 	const response = await fetch(`https://api.github.com/user/${githubUID}`, {
 		headers: { Authorization: process.env.GITHUB_PAT },
@@ -23,5 +26,8 @@ export default async function (
 
 	const data = (await response.json()) as { login: string }
 
-	return (githubCache.usernames[githubUID] = data.login)
+	return {
+		success: true,
+		data: (githubCache.usernames[githubUID] = data.login),
+	}
 }

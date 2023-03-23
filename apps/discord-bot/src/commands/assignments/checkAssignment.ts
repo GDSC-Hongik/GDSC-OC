@@ -76,12 +76,12 @@ export class CheckAssignmentCommand extends Command {
 		const result: AssignmentState = {}
 
 		for (const uid of args.assignment.members) {
-			const gitHubUsername = await getGitHubUsername(uid)
-			if (!gitHubUsername)
+			const gitHubUsernameResult = await getGitHubUsername(uid)
+			if (!gitHubUsernameResult.success)
 				return `사용자 \`${uid}\`의 깃허브 이름을 불러오는데 실패했습니다.`
 
 			const doesFileExist = await fileExists(
-				gitHubUsername,
+				gitHubUsernameResult.data,
 				args.assignment.repository,
 				args.assignment.filePath
 			)
