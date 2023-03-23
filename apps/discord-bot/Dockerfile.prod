@@ -24,6 +24,5 @@ USER node
 COPY --from=deps      /app/node_modules                      ./node_modules
 COPY --from=builder   /app/apps/discord-bot/build            apps/discord-bot/build
 COPY --from=builder   /app/apps/discord-bot/package.json     apps/discord-bot/package.json
-VOLUME /app/apps/discord-bot/build/lib/serviceAccountKey.json
 WORKDIR /app/apps/discord-bot
 CMD ["node", "."]
