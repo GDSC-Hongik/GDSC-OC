@@ -86,7 +86,11 @@ export class CheckAssignmentCommand extends Command {
 				args.assignment.filePath
 			)
 
-			result[uid] = doesFileExist
+			if (!fileExistCheckResult.success)
+				return `깃허브에서 과제 제출 정보를 불러오는데 실패했습니다.
+Reason: ${fileExistCheckResult.reason}`
+
+			result[uid] = fileExistCheckResult.data
 		}
 
 		return result
