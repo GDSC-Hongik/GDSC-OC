@@ -17,7 +17,10 @@ export default async function (
 		return undefined
 	}
 
-	const response = await fetch(`https://api.github.com/user/${githubUID}`)
+	const response = await fetch(`https://api.github.com/user/${githubUID}`, {
+		headers: { Authorization: process.env.GITHUB_PAT },
+	})
+
 	const data = (await response.json()) as { login: string }
 
 	return (githubCache.usernames[githubUID] = data.login)

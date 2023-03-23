@@ -6,7 +6,8 @@ export default async function (
 	filePath: string
 ): Promise<boolean> {
 	const response = await fetch(
-		`https://api.github.com/repos/${username}/${repo}/contents/${filePath}`
+		`https://api.github.com/repos/${username}/${repo}/contents/${filePath}`,
+		{ headers: { Authorization: process.env.GITHUB_PAT } }
 	)
 
 	return response.ok

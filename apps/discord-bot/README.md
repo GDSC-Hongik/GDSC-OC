@@ -23,6 +23,7 @@
    ```dosini
    DISCORD_BOT_TOKEN=<디스코드 봇 토큰>
    SIGN_UP_URL=<회원가입 URL>
+   GITHUB_PAT=<깃허브 Personal Access Token>
    ```
 
 4. 종속 항목 설치
