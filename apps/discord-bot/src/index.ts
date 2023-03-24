@@ -1,4 +1,3 @@
-import { initializeFirebase } from "./lib/firebase"
 import {
 	ApplicationCommandRegistries,
 	RegisterBehavior,
@@ -6,6 +5,8 @@ import {
 } from "@sapphire/framework"
 import { GatewayIntentBits, Partials } from "discord.js"
 import dotenv from "dotenv"
+
+import { initializeFirebase } from "./lib/firebase"
 
 dotenv.config()
 initializeFirebase()

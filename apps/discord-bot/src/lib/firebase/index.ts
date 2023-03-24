@@ -21,8 +21,8 @@ import fixSchema from "./fixSchema"
 import initializeFirebase, { initializeDB } from "./initializeFirebase"
 import { getRolePoint, setRolePoint } from "./rolePoints"
 import {
-	createUser,
 	CreateUserFailReason,
+	createUser,
 	getUser,
 	setUser,
 	setUserDiscordID,
