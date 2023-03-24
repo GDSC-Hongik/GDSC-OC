@@ -8,13 +8,14 @@ import fetch from "node-fetch"
 export default async function (
 	username: string,
 	repo: string,
-	filePath: string
+	filePath: string,
+	github_PAT: string
 ): Promise<
 	{ success: true; data: boolean } | { success: false; reason: string }
 > {
 	const response = await fetch(
 		`https://api.github.com/repos/${username}/${repo}/contents/${filePath}`,
-		{ headers: { Authorization: process.env.GITHUB_PAT } }
+		{ headers: { Authorization: github_PAT } }
 	)
 
 	if (response.headers.get("x-ratelimit-remaining") === "0")

@@ -2,9 +2,9 @@ import { EmbedBuilder, userMention } from "@discordjs/builders"
 import type { ChatInputCommand } from "@sapphire/framework"
 import { Command } from "@sapphire/framework"
 import type { ChatInputCommandInteraction } from "discord.js"
+import { fileExists, getGitHubUsername } from "github"
 
-import { getAssignment, getUser } from "../../lib/firebase"
-import { fileExists, getGitHubUsername } from "../../lib/github"
+import { auth, getAssignment, getUser } from "../../lib/firebase"
 import { Assignment } from "../../types/assignments"
 
 interface Args {
@@ -76,14 +76,20 @@ export class CheckAssignmentCommand extends Command {
 		const result: AssignmentState = {}
 
 		for (const uid of args.assignment.members) {
-			const gitHubUsernameResult = await getGitHubUsername(uid)
+			const gitHubUsernameResult = await getGitHubUsername(
+				auth,
+				uid,
+				process.env.GITHUB_PAT
+			)
 			if (!gitHubUsernameResult.success)
-				return `사용자 \`${uid}\`의 깃허브 이름을 불러오는데 실패했습니다.`
+				return `사용자 \`${uid}\`의 깃허브 이름을 불러오는데 실패했습니다.
+Reason: ${gitHubUsernameResult.reason}`
 
-			const doesFileExist = await fileExists(
+			const fileExistCheckResult = await fileExists(
 				gitHubUsernameResult.data,
 				args.assignment.repository,
-				args.assignment.filePath
+				args.assignment.filePath,
+				process.env.GITHUB_PAT
 			)
 
 			if (!fileExistCheckResult.success)

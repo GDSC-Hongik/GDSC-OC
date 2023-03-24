@@ -1,4 +1,5 @@
-import { auth } from "../firebase"
+import type { Auth } from "firebase-admin/auth"
+
 import { githubCache } from "."
 
 /**
@@ -8,6 +9,7 @@ import { githubCache } from "."
  * https://api.github.com/users/developomp
  */
 export default async function (
+	auth: Auth,
 	firebaseUID: string
 ): Promise<string | undefined> {
 	if (githubCache.ids[firebaseUID]) return githubCache.ids[firebaseUID]

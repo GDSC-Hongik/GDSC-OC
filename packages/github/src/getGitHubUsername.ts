@@ -1,3 +1,4 @@
+import type { Auth } from "firebase-admin/auth"
 import fetch from "node-fetch"
 
 import { getGitHubUID, githubCache } from "."
@@ -6,14 +7,16 @@ import { getGitHubUID, githubCache } from "."
  * Converts firebase user UID to GitHub username.
  */
 export default async function (
-	firebaseUID: string
+	auth: Auth,
+	firebaseUID: string,
+	github_PAT: string
 ): Promise<
 	{ success: true; data: string } | { success: false; reason: string }
 > {
 	if (githubCache.usernames[firebaseUID])
 		return { success: true, data: githubCache.usernames[firebaseUID] }
 
-	const githubUID = await getGitHubUID(firebaseUID)
+	const githubUID = await getGitHubUID(auth, firebaseUID)
 	if (!githubUID)
 		return {
 			success: false,
@@ -21,7 +24,7 @@ export default async function (
 		}
 
 	const response = await fetch(`https://api.github.com/user/${githubUID}`, {
-		headers: { Authorization: process.env.GITHUB_PAT },
+		headers: { Authorization: github_PAT },
 	})
 
 	if (response.headers.get("x-ratelimit-remaining") === "0")
