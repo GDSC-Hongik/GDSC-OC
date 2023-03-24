@@ -15,7 +15,7 @@ export default async function (
 > {
 	const response = await fetch(
 		`https://api.github.com/repos/${username}/${repo}/contents/${filePath}`,
-		{ headers: { Authorization: github_PAT } }
+		{ headers: { Authorization: `Bearer ${github_PAT}` } }
 	)
 
 	if (response.headers.get("x-ratelimit-remaining") === "0")
