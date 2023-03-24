@@ -12,9 +12,17 @@
 
    - https://turbo.build/repo/docs/installing
 
-4. 모든 프로젝트 실행
+4. 프로젝트 빌드
 
-   - 에러 발생 시 해당 프로젝트의 `README.md` 파일를 참고하세요
+   - 몇몇 IDE 기능을 위해 필요한 단계입니다
+
+   ```
+   yarn build
+   ```
+
+5. 모든 프로젝트 실행
+
+   - 환경 변수 등의 이유로 에러 발생 시 해당 프로젝트의 `README.md` 파일를 참고하세요
 
    ```
    yarn dev
