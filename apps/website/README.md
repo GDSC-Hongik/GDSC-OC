@@ -121,7 +121,6 @@ GDSC 홍익 오픈 커뮤니티 회원가입을 위해 Digital Ocean App Platfor
       region: sgp
       services:
         - build_command: yarn build --filter=website
-          environment_slug: node-js
           envs: <비밀>
           github:
             branch: master
