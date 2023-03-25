@@ -5,6 +5,8 @@ on:
     paths:
       - apps/discord-bot/**
       - .github/workflows/discord-deploy.yml
+    paths-ignore:
+      - "**/README.md"
     branches:
       - master
   workflow_dispatch:
