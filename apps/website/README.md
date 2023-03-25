@@ -9,7 +9,7 @@ GDSC 홍익 오픈 커뮤니티 회원가입을 위해 Digital Ocean App Platfor
 2. 종속 항목 설치
 
    ```
-   npm install
+   yarn install
    ```
 
 3. Firebase 셋업
@@ -23,7 +23,7 @@ GDSC 홍익 오픈 커뮤니티 회원가입을 위해 Digital Ocean App Platfor
    2. Firebase CLI 설치
 
       ```
-      npm install -g firebase-tools
+      yarn install -g firebase-tools
       ```
 
    3. Firebase CLI 로그인
@@ -70,13 +70,13 @@ GDSC 홍익 오픈 커뮤니티 회원가입을 위해 Digital Ocean App Platfor
 5. [http://localhost:5173](http://localhost:5173)에서 실행
 
    ```
-   npm run dev
+   yarn dev
    ```
 
 6. Production build 생성
 
    ```
-   npm run build
+   yarn build
    ```
 
 7. Production build 실행
@@ -96,7 +96,7 @@ GDSC 홍익 오픈 커뮤니티 회원가입을 위해 Digital Ocean App Platfor
     - 빌드 커맨드
 
       ```
-      cd apps/website && npm run build
+      cd apps/website && yarn build
       ```
 
     - 실행 명령어
@@ -120,7 +120,7 @@ GDSC 홍익 오픈 커뮤니티 회원가입을 위해 Digital Ocean App Platfor
       name: website
       region: sgp
       services:
-      - build_command: cd apps/website && npm run build
+      - build_command: cd apps/website && yarn build
          environment_slug: node-js
          envs: <비밀>
          github:
