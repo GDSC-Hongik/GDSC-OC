@@ -1,14 +1,17 @@
-# ignore root "_" directory
-# used for temporarily storing stuff without cluttering untracked git files
+# temporary file storage
 /_/
-# tsc compile output
+
+# compile outputs
 **/build/
-# firebase service account key
-**/serviceAccountKey.json
+**/dist/
+
+# secrets
 **/.env
+**/serviceAccountKey.json
+
+# logs
 **/*.log
+
+# cache and stuff
+**/.turbo/
 **/node_modules/
-**/*Dockerfile*
-**/.prettierrc*
-**/.gitignore
-**/.eslintrc*
