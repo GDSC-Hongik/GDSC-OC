@@ -1,10 +1,10 @@
+import { botCache, fixSchema, refs } from "."
 import {
 	Assignment,
 	assignmentSchema,
 	defaultAssignment,
 } from "../../types/assignments"
 import nanoid from "../nanoid"
-import { botCache, fixSchema, refs } from "."
 
 export async function listAssignments(
 	listClosed = false

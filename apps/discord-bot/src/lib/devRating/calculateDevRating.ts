@@ -1,4 +1,4 @@
-import { devRating2Tier, Tier, tierSchema } from "../../types/tier"
+import { Tier, devRating2Tier, tierSchema } from "../../types/tier"
 import { GDSCUser } from "../../types/user"
 import { botCache } from "../firebase"
 

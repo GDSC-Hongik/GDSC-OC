@@ -3,7 +3,7 @@ import type { ChatInputCommand } from "@sapphire/framework"
 import { Command } from "@sapphire/framework"
 import type { ChatInputCommandInteraction } from "discord.js"
 
-import { createUser, CreateUserFailReason } from "../lib/firebase"
+import { CreateUserFailReason, createUser } from "../lib/firebase"
 
 const optionName = "코드"
 

@@ -4,8 +4,8 @@ import { cert } from "firebase-admin/app"
 import { getAuth } from "firebase-admin/auth"
 import { getFirestore } from "firebase-admin/firestore"
 
-import serviceAccount from "../serviceAccountKey.json"
 import { botCache, db, refs, setAuth, setDB, setRefs } from "."
+import serviceAccount from "../serviceAccountKey.json"
 
 export default async function () {
 	console.log("Initializing Firebase")

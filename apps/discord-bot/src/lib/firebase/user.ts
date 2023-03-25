@@ -1,6 +1,6 @@
-import { defaultGDSCUser, GDSCUser } from "../../types/user"
-import { gdscUserSchema } from "../../types/user"
 import { auth, botCache, fixSchema, refs } from "."
+import { GDSCUser, defaultGDSCUser } from "../../types/user"
+import { gdscUserSchema } from "../../types/user"
 
 export enum CreateUserFailReason {
 	USER_NOT_IN_AUTH,
