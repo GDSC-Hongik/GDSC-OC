@@ -11,6 +11,8 @@
 
 ## 개발 세팅
 
+- [vscode](https://code.visualstudio.com) IDE 사용을 권장합니다
+
 1. Node 18 (hydrogen) 설치
 
 2. yarn CLI 설치
