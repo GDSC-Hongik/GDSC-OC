@@ -28,6 +28,19 @@
    yarn dev
    ```
 
+## 필요한 주요 지식/기술
+
+- Turborepo
+- yarn CLI
+- nodejs
+- TypeScript
+- ESLint
+- firebase (auth, firestore)
+- DigitalOcean
+- Docker
+- github Action
+- Prisma
+
 ## 기여
 
 - 커밋시 [conventional commit](https://conventionalcommits.org)을 사용해주세요
