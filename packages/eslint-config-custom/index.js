@@ -1,16 +1,17 @@
 module.exports = {
-  extends: ["next", "turbo", "prettier"],
-  settings: {
-    next: {
-      rootDir: ["apps/*/", "packages/*/"],
-    },
-  },
-  rules: {
-    "@next/next/no-html-link-for-pages": "off",
-  },
-  parserOptions: {
-    babelOptions: {
-      presets: [require.resolve("next/babel")],
-    },
-  },
-};
+	extends: [
+		"turbo",
+		"prettier",
+		"plugin:@typescript-eslint/recommended",
+		"eslint:recommended",
+	],
+	rules: {
+		"import/no-anonymous-default-export": "off",
+		// https://github.com/typescript-eslint/typescript-eslint/issues/2621#issuecomment-701970389
+		"no-unused-vars": "off",
+		"@typescript-eslint/no-unused-vars": "error",
+	},
+	env: {
+		node: true,
+	},
+}
