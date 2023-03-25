@@ -2,6 +2,13 @@
 
 [turborepo](https://turbo.build/repo)를 이용해 관리되는 monorepo입니다.
 
+다음을 포함하고 있습니다:
+
+- `apps/discord-bot` - GDSC OC 디스코드 봇
+- `apps/website` - [https://oc.gdschongik.com](https://oc.gdschongik.com)
+- `packages/database` - [mongoDB](https://mongodb.com) 관리를 위한 [prisma](https://prisma.io) 라이브러리
+- `packages/github` - [GitHub](https://github.com) API wrapper
+
 ## 개발 세팅
 
 1. Node 18 (hydrogen) 설치
