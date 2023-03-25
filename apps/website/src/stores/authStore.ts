@@ -2,7 +2,7 @@ import { auth } from "../lib/firebase/firebase.client"
 import {
 	GithubAuthProvider,
 	type User,
-	signInWithRedirect,
+	signInWithPopup,
 	signOut,
 } from "firebase/auth"
 import { type Writable, writable } from "svelte/store"
@@ -23,7 +23,7 @@ export async function login() {
 	// https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps#available-scopes
 	provider.addScope("user:email")
 
-	await signInWithRedirect(auth, provider)
+	await signInWithPopup(auth, provider)
 }
 
 export async function logout() {
