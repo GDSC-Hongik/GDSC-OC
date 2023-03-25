@@ -3,14 +3,18 @@
 	"globalEnv": ["NODE_ENV"],
 	"pipeline": {
 		"build": {
-			"outputs": ["dist/**", ".next/**"],
+			"outputs": ["dist/**", "build/**", ".svelte-kit/**"],
 			"dependsOn": ["^build"]
 		},
 		"generate": {
 			"dependsOn": ["^generate"]
 		},
-		"db:migrate:deploy": {},
-		"db:push": {},
+		"db:migrate:deploy": {
+			"cache": false
+		},
+		"db:push": {
+			"cache": false
+		},
 		"dev": {
 			"cache": false,
 			"persistent": true
