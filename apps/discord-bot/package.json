@@ -7,7 +7,7 @@
 		"clean": "rimraf build",
 		"build": "tsc",
 		"start": "npm run clean && npm run build && node .",
-		"dev": "npx nodemon"
+		"dev": "nodemon"
 	},
 	"dependencies": {
 		"@sapphire/framework": "^4.2.2",
@@ -27,6 +27,7 @@
 		"eslint": "^8.36.0",
 		"eslint-config-custom": "*",
 		"eslint-config-prettier": "^8.8.0",
+		"nodemon": "^2.0.22",
 		"prettier": "^2.8.7",
 		"rimraf": "^4.4.1",
 		"typescript": "^5.0.2"
