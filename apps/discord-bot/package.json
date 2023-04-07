@@ -4,9 +4,8 @@
 	"main": "build/index.js",
 	"private": true,
 	"scripts": {
-		"clean": "rimraf build",
-		"build": "tsc",
-		"start": "npm run clean && npm run build && node .",
+		"build": "tsup",
+		"start": "npm run build && node .",
 		"dev": "nodemon"
 	},
 	"dependencies": {
@@ -29,7 +28,7 @@
 		"eslint-config-prettier": "^8.8.0",
 		"nodemon": "^2.0.22",
 		"prettier": "^2.8.7",
-		"rimraf": "^4.4.1",
+		"tsup": "^6.7.0",
 		"typescript": "^5.0.2"
 	}
 }
