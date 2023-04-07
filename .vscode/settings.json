@@ -1,31 +1,31 @@
 {
-  "cSpell.words": [
-    "cooldown",
-    "cooldowns",
-    "devrating",
-    "DOCKERHUB",
-    "firestore",
-    "flowbite",
-    "GDSC",
-    "gdschongikoc",
-    "Hongik",
-    "popperjs",
-    "tailwindcss",
-    "tsup",
-    "Turborepo",
-    "UNRANKED",
-    "upvote",
-    "upvoted",
-    "upvoters",
-    "upvotes",
-    "zerodevx"
-  ],
+	"cSpell.words": [
+		"cooldown",
+		"cooldowns",
+		"devrating",
+		"DOCKERHUB",
+		"firestore",
+		"flowbite",
+		"GDSC",
+		"gdschongikoc",
+		"Hongik",
+		"popperjs",
+		"tailwindcss",
+		"tsup",
+		"Turborepo",
+		"UNRANKED",
+		"upvote",
+		"upvoted",
+		"upvoters",
+		"upvotes",
+		"zerodevx"
+	],
 
-  // ignore tailwind warnings
-  "css.lint.unknownAtRules": "ignore",
+	// ignore tailwind warnings
+	"css.lint.unknownAtRules": "ignore",
 
-  "editor.codeActionsOnSave": {
-    // for import sorting and stuff
-    "source.fixAll.eslint": true
-  }
+	"editor.codeActionsOnSave": {
+		// for import sorting and stuff
+		"source.fixAll.eslint": true
+	}
 }
