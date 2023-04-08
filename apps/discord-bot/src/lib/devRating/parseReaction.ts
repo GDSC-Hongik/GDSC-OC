@@ -110,7 +110,7 @@ async function parseArgs(
 	if (message.author.id === user.id)
 		return {
 			success: false,
-			reason: "Can not upvote/downvote oneself's message",
+			reason: "Can not add/remove upvote from oneself's message",
 		}
 
 	const upvoteAdderUID = snowflake2UID(user.id)
@@ -141,5 +141,5 @@ async function parseArgs(
 }
 
 function logError(messageURL: string, reason: string): void {
-	console.error(`Failed to add upvote to ${messageURL}. ${reason}.`)
+	console.error(`Failed to add/remove upvote to ${messageURL}. ${reason}.`)
 }

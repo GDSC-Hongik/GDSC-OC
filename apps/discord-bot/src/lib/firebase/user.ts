@@ -18,7 +18,7 @@ export async function createUser(
 		await auth.getUser(uid)
 	} catch {
 		console.error(
-			`Failed create user "${uid}" int firestore. User does not exist in firebase auth.`
+			`Failed create user "${uid}" in firestore. User does not exist in firebase auth.`
 		)
 
 		return { success: false, reason: CreateUserFailReason.USER_NOT_IN_AUTH }
