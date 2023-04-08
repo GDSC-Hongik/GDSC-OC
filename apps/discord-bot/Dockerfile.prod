@@ -20,7 +20,7 @@ COPY --from=builder /app/out/json/     .
 COPY --from=builder /app/out/yarn.lock ./yarn.lock
 RUN yarn install
 COPY --from=builder /app/out/full/     .
-RUN touch apps/discord-bot/src/lib/serviceAccountKey.json
+RUN echo "{}" > apps/discord-bot/src/lib/serviceAccountKey.json
 RUN yarn turbo run build
 WORKDIR /app/apps/discord-bot
 CMD ["node", "."]
