@@ -1,4 +1,3 @@
-import type { Auth } from "firebase-admin/auth"
 import type {
 	CollectionReference,
 	DocumentData,
@@ -29,7 +28,8 @@ import {
 	snowflake2UID,
 } from "./user"
 
-export let auth: Auth
+export * from "./auth"
+
 export let db: Firestore
 
 export let refs = {
@@ -96,10 +96,6 @@ export const botCache: BotCache = {
 		snowflake2uid: {},
 	},
 	users: {},
-}
-
-export function setAuth(newAuth: Auth) {
-	auth = newAuth
 }
 
 export function setDB(newDB: Firestore) {
