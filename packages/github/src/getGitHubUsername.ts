@@ -1,5 +1,6 @@
 import type { Auth } from "firebase-admin/auth"
 import fetch from "node-fetch"
+import { SuccessOrFail } from "types"
 
 import { getGitHubUID, githubCache } from "."
 
@@ -10,9 +11,7 @@ export default async function (
 	auth: Auth,
 	firebaseUID: string,
 	github_PAT: string
-): Promise<
-	{ success: true; data: string } | { success: false; reason: string }
-> {
+): Promise<SuccessOrFail<string, string>> {
 	if (githubCache.usernames[firebaseUID])
 		return { success: true, data: githubCache.usernames[firebaseUID] }
 

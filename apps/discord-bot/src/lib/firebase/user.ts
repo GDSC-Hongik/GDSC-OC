@@ -1,3 +1,5 @@
+import { SuccessOrFail } from "types"
+
 import { auth, botCache, fixSchema, refs } from "."
 import { GDSCUser, defaultGDSCUser } from "../../types/user"
 import { gdscUserSchema } from "../../types/user"
@@ -10,10 +12,7 @@ export enum CreateUserFailReason {
 export async function createUser(
 	uid: string,
 	data: GDSCUser
-): Promise<
-	| { success: true; user: GDSCUser }
-	| { success: false; reason: CreateUserFailReason }
-> {
+): Promise<SuccessOrFail<GDSCUser, CreateUserFailReason>> {
 	// check if user exists in firebase auth
 	try {
 		await auth.getUser(uid)
@@ -41,7 +40,7 @@ export async function createUser(
 	await setUserDiscordID(uid, data.discordID)
 	return {
 		success: true,
-		user: (await cacheUser(uid, data)) || data,
+		data: (await cacheUser(uid, data)) || data,
 	}
 }
 

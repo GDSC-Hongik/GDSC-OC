@@ -1,4 +1,5 @@
 import moment from "moment-timezone"
+import { SuccessOrFail } from "types"
 
 import { Achievements } from "../../types/achievements"
 import { Activities } from "../../types/activities"
@@ -9,7 +10,7 @@ import snowflake2Time from "../snowflake2Time"
 export default async function (
 	userSnowflake: string,
 	messageSnowflake: string
-): Promise<{ success: boolean }> {
+): Promise<SuccessOrFail<void, void>> {
 	const uid = snowflake2UID(userSnowflake)
 	if (!uid) {
 		printError(userSnowflake, "Unregistered user")

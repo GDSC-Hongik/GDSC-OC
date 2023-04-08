@@ -4,6 +4,7 @@ import type {
 	PartialUser,
 	User,
 } from "discord.js"
+import { SuccessOrFail } from "types"
 
 import { Activities } from "../../types/activities"
 import type { GDSCUser } from "../../types/user"
@@ -103,7 +104,7 @@ export async function upvoteRemove(
 async function parseArgs(
 	reaction: MessageReaction | PartialMessageReaction,
 	user: User | PartialUser
-): Promise<{ success: true; data: Args } | { success: false; reason: string }> {
+): Promise<SuccessOrFail<Args, string>> {
 	const message = await reaction.message.fetch()
 
 	if (message.author.id === user.id)

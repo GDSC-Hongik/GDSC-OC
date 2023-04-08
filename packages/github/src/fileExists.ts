@@ -1,4 +1,5 @@
 import fetch from "node-fetch"
+import { SuccessOrFail } from "types"
 
 /**
  * Checks if a file exists in a GitHub repository.
@@ -10,9 +11,7 @@ export default async function (
 	repo: string,
 	filePath: string,
 	github_PAT: string
-): Promise<
-	{ success: true; data: boolean } | { success: false; reason: string }
-> {
+): Promise<SuccessOrFail<boolean, string>> {
 	const response = await fetch(
 		`https://api.github.com/repos/${username}/${repo}/contents/${filePath}`,
 		{ headers: { Authorization: `Bearer ${github_PAT}` } }
