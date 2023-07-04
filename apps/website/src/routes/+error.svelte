@@ -3,4 +3,4 @@
 	import { page } from "$app/stores"
 </script>
 
-<Heading>{$page.status} - {$page.error?.message}</Heading>
+<Heading class="text-center">{$page.status} - {$page.error?.message}</Heading>
