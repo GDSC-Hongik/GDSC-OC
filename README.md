@@ -6,7 +6,6 @@
 
 - `apps/discord-bot` - GDSC OC 디스코드 봇
 - `apps/website` - [https://oc.gdschongik.com](https://oc.gdschongik.com)
-- `packages/database` - [mongoDB](https://mongodb.com) 관리를 위한 [prisma](https://prisma.io) 라이브러리
 - `packages/github` - [GitHub](https://github.com) API wrapper
 
 ## 개발 세팅
@@ -48,7 +47,6 @@
 - DigitalOcean
 - Docker
 - github Action
-- Prisma
 
 ## 기여
 

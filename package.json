@@ -17,8 +17,5 @@
 		"eslint-config-custom": "*",
 		"turbo": "latest"
 	},
-	"prisma": {
-		"schema": "packages/database/prisma/schema.prisma"
-	},
 	"packageManager": "yarn@1.22.19"
 }

@@ -1,9 +1,8 @@
 {
-  "recommendations": [
-    "prisma.prisma",
-    "svelte.svelte-vscode",
-    "dbaeumer.vscode-eslint",
-    "mikestead.dotenv",
-    "ms-azuretools.vscode-docker"
-  ]
+	"recommendations": [
+		"svelte.svelte-vscode",
+		"dbaeumer.vscode-eslint",
+		"mikestead.dotenv",
+		"ms-azuretools.vscode-docker"
+	]
 }
