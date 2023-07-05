@@ -3,7 +3,7 @@
 	"globalEnv": ["NODE_ENV"],
 	"pipeline": {
 		"build": {
-			"outputs": ["dist/**", "build/**", ".svelte-kit/**"],
+			"outputs": ["build/**", ".svelte-kit/**", ".vercel/**"],
 			"dependsOn": ["^build"]
 		},
 		"generate": {
