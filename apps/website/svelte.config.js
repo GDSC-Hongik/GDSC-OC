@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-node"
+import adapter from "@sveltejs/adapter-vercel"
 import { vitePreprocess } from "@sveltejs/kit/vite"
 import preprocess from "svelte-preprocess"
 
@@ -12,7 +12,12 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			runtime: "edge",
+			regions: [
+				"ap-northeast-2", // Seoul, South Korea
+			],
+		}),
 	},
 }
 
