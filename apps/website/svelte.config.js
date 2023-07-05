@@ -14,9 +14,6 @@ const config = {
 	kit: {
 		adapter: adapter({
 			runtime: "edge",
-			regions: [
-				"ap-northeast-2", // Seoul, South Korea
-			],
 		}),
 	},
 }
