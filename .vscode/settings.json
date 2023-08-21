@@ -28,5 +28,6 @@
 	"editor.codeActionsOnSave": {
 		// for import sorting and stuff
 		"source.fixAll.eslint": true
-	}
+	},
+	"editor.formatOnSave": true
 }
