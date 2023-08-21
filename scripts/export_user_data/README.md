@@ -1,9 +1,5 @@
 # 사용자 정보 내보내기 스크립트
 
-```bash
-firebase auth:export firebase-users.json --format=json --project gdsc-oc
-```
-
 ## 세팅
 
 1. 파이썬 가상 환경 만들기
